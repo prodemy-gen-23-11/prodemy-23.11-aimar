@@ -1,0 +1,128 @@
+header {
+    margin: 30px;
+}
+
+.header-logo {
+    float: left;
+    margin-left: 2px;
+}
+
+.header-menu {
+    text-align: center;
+}
+
+.link,
+.link:visited {
+    color: black;
+    border: 0.2px solid;
+    border-radius: 5px;
+    padding: 2px;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    background-color: black;
+    color: white;
+}
+
+.menu-samping {
+    float: right;
+    margin: 2px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.breadcrumbs {
+    float: left;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+
+    #home {
+        color: rgba(109, 109, 109, 0.4);
+    }
+}
+
+h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    margin-top: 5rem;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    height: auto;
+    margin: 10px auto;
+    overflow: auto;
+
+    .product-list {
+        text-align: center;
+
+        .item {
+            margin: 10px;
+            padding: 15px 20px;
+            width: 250px;
+            height: 400px;
+
+
+            p {
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                margin: 10px;
+            }
+
+            img {
+                max-width: 70%;
+                height: auto;
+                opacity: 0.6;
+                border-radius: 10px;
+                transition: opacity 2s, width 2s;
+            }
+
+            img:hover,
+            img:active {
+                max-width: 100%;
+                opacity: 1;
+            }
+        }
+    }
+
+    .item-price {
+        margin: 5px;
+        font-weight: lighter;
+        float: left;
+        color: rgba(109, 109, 109, 0.2);
+    }
+
+    .item-sold {
+        margin: 5px;
+        font-weight: lighter;
+        float: right;
+        color: rgba(109, 109, 109, 0.2);
+    }
+}
+
+footer {
+    background-color: black;
+    padding: 20px;
+}
+
+.copyright {
+    color: white;
+    text-align: center;
+}
