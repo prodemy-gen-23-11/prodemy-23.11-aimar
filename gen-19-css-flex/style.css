@@ -2,35 +2,97 @@ header {
     margin: 30px;
     display: flex;
     justify-content: space-between;
+    background-color: rgb(0, 0, 0);
+    padding: 20px 30px;
+    margin: 0 auto;
+    align-items: center;
 }
 
 .header-logo {
     float: left;
     margin-left: 2px;
+    background-color: white;
+    padding: 5px 5px;
+    margin: 5px 5px;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.header-logo:hover,
+.header-logo:active {
+    cursor: pointer;
+    filter: invert(100);
+    background-color: gainsboro;
 }
 
 .header-menu {
-    text-align: center;
+
+    background-color: white;
+    padding: 10px 10px;
+    margin: 5px 5px;
+    border-radius: 10px;
 }
 
 .link,
 .link:visited {
     color: black;
-    border: 0.2px solid;
-    border-radius: 5px;
-    padding: 2px;
+    margin: 0px 20px;
     text-decoration: none;
+    transition: all 0.5s;
 }
 
 .link:hover,
 .link:active {
-    background-color: black;
+    cursor: pointer;
+    background-color: rgb(36, 35, 35);
     color: white;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 .menu-samping {
     float: right;
     margin: 2px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 5px;
+    margin: 5px 5px;
+    align-items: center;
+}
+
+#search,
+#profile,
+#bag {
+    width: 24px;
+    height: 24px;
+    transition: all 0.5s;
+}
+
+#search:hover,
+#search:active {
+    filter: invert(100);
+    background-color: gainsboro;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+#profile:hover,
+#profile:active {
+    filter: invert(100);
+    background-color: gainsboro;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+#bag:hover,
+#bag:active {
+    filter: invert(100);
+    background-color: gainsboro;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
 }
 
 
@@ -38,7 +100,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
+    background-color: gainsboro;
 }
 
 .breadcrumbs {
@@ -47,29 +109,34 @@ body {
     line-height: 1.25rem;
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 30px;
+    margin-top: 10px;
+    background-color: white;
+    padding: 10px 10px;
+    border-radius: 10px;
 
     #home {
-        color: rgba(109, 109, 109, 0.4);
+        color: black;
+        text-decoration: none;
+    }
+    #home:hover, #home:active{
+         cursor: pointer;
+    background-color: rgb(36, 35, 35);
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
     }
 }
 
-h1 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 0.5rem;
-    margin-top: 5rem;
-}
-
 .container {
+    background-color: white;
+    padding: 10px 10 px;
+    margin: 100px 60px;
+    border-radius: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     max-width: 1200px;
     height: auto;
-    margin: 10px auto;
     overflow: auto;
 
     .product-list {
@@ -80,42 +147,61 @@ h1 {
             padding: 10px 20px;
             width: 250px;
             height: 400px;
+            position: relative;
 
-
-            p {
+            .item-info{
+                max-width: fit-content;
+                height: fit-content;
                 font-family: Arial, Helvetica, sans-serif;
                 font-weight: bold;
                 margin: 10px;
+                padding: 5px 10px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                transition: opacity 1s;
             }
 
             img {
-                max-width: 70%;
+                max-width: 100%;
                 height: auto;
-                opacity: 0.6;
+                opacity: 1;
                 border-radius: 10px;
                 transition: all 1s;
             }
-
-            img:hover,
-            img:active {
-                max-width: 100%;
+        
+            &:hover .item-info{
+                background-color: rgba(126, 124, 124, 0.795);
                 opacity: 1;
             }
+
         }
     }
 
-    .item-price {
-        margin: 5px;
-        font-weight: lighter;
-        float: left;
-        color: rgba(109, 109, 109, 0.2);
+    .shopping-cart{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: white;
+        color: black;
+        padding: 4px;
+        text-decoration: none;
+        border-radius: 10px;
+        cursor: pointer;
     }
 
     .item-sold {
         margin: 5px;
-        font-weight: lighter;
-        float: right;
-        color: rgba(109, 109, 109, 0.2);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: xx-small;
+        font-style: italic;
+        position: absolute;
+        left: 100%;
+        top: 140%;
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        padding: 5px;
     }
 }
 
