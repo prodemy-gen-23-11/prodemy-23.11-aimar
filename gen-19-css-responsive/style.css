@@ -63,6 +63,7 @@ header {
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: left;
+    z-index: 1;
 }
 
 #side-menu #sidebar {
@@ -293,14 +294,13 @@ footer {
 }
 
 @media screen and (max-width: 750px) {
+
+    header{
+        justify-content: flex-end;
+    }
     .header-menu {
         display: none;
     }
-
-    .header-logo {
-        align-items: center;
-    }
-
     #side-menu {
         display: inline;
     }
