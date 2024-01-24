@@ -301,6 +301,9 @@ footer {
     .header-menu {
         display: none;
     }
+    .menu-samping{
+        margin-left: 130px;
+    }
     #side-menu {
         display: inline;
     }
