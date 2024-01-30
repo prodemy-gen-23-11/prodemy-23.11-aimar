@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slider{
+    display: none;
+    position: relative;
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+}
+.thumb{
+    position: relative;
+    cursor: pointer;
+}
+.small-img{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 4px;
+    opacity: 0.6;
+}
+.active,
+.small-img:hover{
+    opacity: 1;
+}

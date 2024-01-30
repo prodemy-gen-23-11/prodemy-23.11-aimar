@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tes Tailwinds</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="fixed w-full top-0 z-1">
+      <nav
+        class="transition duration-100 ease-in-out flex justify-between h-16 px-3 items-center text-black bg-white"
+      >
+        <div class="flex gap-16 items-center">
+          <div class="flex gap-4 items-center">
+            <img
+              src="https://heymale.id/assets/burger-black-75ca1788.svg"
+              alt="sidemenu"
+              class="w-6 h-6 cursor-pointer md:hidden lg:hidden"
+            />
+            <img
+              src="https://heymale.id/assets/heymale-50ba8d2d.png"
+              alt="logo"
+              class="w-full max-w-[140px] cursor-pointer"
+            />
+          </div>
+          <div class="hidden md:flex lg:flex">
+            <!--sudah berhasil responsive-->
+            <div class="flex gap-12">
+              <div>
+                <a href="#"
+                  ><p class="text-[13px] uppercase">RAINY SEASON COLLECTION</p>
+                </a>
+              </div>
+              <div>
+                <a href="#"
+                  ><p class="text-[13px] uppercase">AVAILABLE ITEMS</p>
+                </a>
+              </div>
+              <div>
+                <div class="flex gap-2 text-[13px] uppercase cursor-pointer">
+                  <span>COLLECTION</span>
+                  <img
+                    class="mt-1 h-3 w-3 rotate-0"
+                    src="https://heymale.id/assets/chevron-down-79b13f5e.svg"
+                    alt="open"
+                  />
+                </div>
+              </div>
+              <div>
+                <a href="#"
+                  ><p class="text-[13px] uppercase">ACCESSORIES</p>
+                </a>
+              </div>
+              <a href="#"
+                ><p class="text-[13px] uppercase">Tracking Order</p></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <img
+            class="w-6 h-6 cursor-pointer"
+            src="https://heymale.id/assets/search-black-c4d32415.svg"
+            alt="search"
+          />
+          <img
+            class="w-6 h-6 cursor-pointer"
+            src="https://heymale.id/assets/person-black-322902d6.svg"
+            alt="profile"
+          />
+          <img
+            class="w-6 h-6 cursor-pointer"
+            src="https://heymale.id/assets/bag-black-ba36e404.svg"
+            alt="bag"
+          />
+        </div>
+      </nav>
+    </div>
+    <div class="relative h-full mb-8 mt-[72px]" style="min-height: 70vh">
+      <div class="w-full h-full bg-white flex flex-col py-4 lg:px-3">
+        <div class="grid gap-6 sm:grid-flow-row lg:grid-cols-2 lg:px-3 mx-3">
+          <!--sudah responsive-->
+          <div>
+            <div>
+              <!--IMAGE BELUM CENTER-->
+              <div class="w-[calc(50%-8px)] h-auto flex-shrink-0 relative">
+                <div class="slider">
+                  <img
+                    src="https://spaces.ilfen.co/assets/image/produk/EB918091-A5A3-4A3E-A0B9-0C46B23116BC.jpeg"
+                    alt="image"
+                    class="w-full h-auto rounded-lg"
+                  />
+                </div>
+              </div>
+              <div class="w-[calc(50%-8px)] h-auto flex-shrink-0 relative">
+                <div class="slider">
+                  <img
+                    src="https://spaces.ilfen.co/assets/image/produk/IMG-20230728-WA0037.jpg"
+                    alt="image"
+                    class="w-full h-auto rounded-lg"
+                  />
+                </div>
+              </div>
+              <div class="w-[calc(50%-8px)] h-auto flex-shrink-0 relative">
+                <div class="slider">
+                  <img
+                    src="https://spaces.ilfen.co/assets/image/produk/IMG-20230728-WA0038.jpg"
+                    alt="image"
+                    class="w-full h-auto rounded-lg"
+                  />
+                </div>
+              </div>
+              <div class="w-[calc(50%-8px)] h-auto flex-shrink-0 relative">
+                <div class="slider">
+                  <img
+                    src="https://spaces.ilfen.co/assets/image/produk/6DECB577-275A-487A-A539-4E824307DFF3.jpeg"
+                    alt="image"
+                    class="w-full h-auto rounded-lg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center items-center gap-4 my-4">
+              <div class="thumb">
+                <img
+                  src="https://spaces.ilfen.co/assets/image/produk/EB918091-A5A3-4A3E-A0B9-0C46B23116BC.jpeg"
+                  alt="small-image"
+                  class="small-img"
+                  onclick="currentSlide(1)"
+                />
+              </div>
+              <div class="thumb">
+                <img
+                  src="https://spaces.ilfen.co/assets/image/produk/IMG-20230728-WA0037.jpg"
+                  alt="small-image"
+                  class="small-img"
+                  onclick="currentSlide(2)"
+                />
+              </div>
+              <div class="thumb">
+                <img
+                  src="https://spaces.ilfen.co/assets/image/produk/IMG-20230728-WA0038.jpg"
+                  alt="small-image"
+                  class="small-img"
+                  onclick="currentSlide(3)"
+                />
+              </div>
+              <div class="thumb">
+                <img
+                  src="https://spaces.ilfen.co/assets/image/produk/EB918091-A5A3-4A3E-A0B9-0C46B23116BC.jpeg"
+                  alt="small-image"
+                  class="small-img"
+                  onclick="currentSlide(4)"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="mt-8 md:mt-0">
+            <div class="px-3">
+              <p class="font-medium text-lg">Exmood EDP</p>
+              <p class="font-medium">
+                <span class="text-lg text-black">Rp&nbsp;175.000</span>
+              </p>
+              <p class="text-[#7d7d7d] font-medium text-[13px] mb-2">
+                40,816 item sold
+              </p>
+            </div>
+            <div class="mt-3 px-3">
+              <button
+                name="add-bag-btn"
+                class="mb-2 uppercase bg-black text-white flex justify-center items-center h-12 w-full font-bold text-base cursor-pointer rounded-lg disabled:cursor-not-allowed disabled:bg-[#a3a3a3] relative"
+              >
+                add to bag
+              </button>
+              <div class="mb-5 flex justify-between">
+                <button
+                  name="add-wish"
+                  class="w-[80%] uppercase bg-white h-12 font-bold text-base border border-black cursor-pointer relative rounded-lg"
+                >
+                  <div class="flex gap-3 justify-center items-center">
+                    <img
+                      class="w-6 h-6"
+                      src="https://heymale.id/assets/heart-e4149e3c.svg"
+                      alt="like"
+                    />add to wishlist
+                  </div>
+                </button>
+                <button
+                  name="share-btn"
+                  class="w-[15%] uppercase bg-white h-12 font-bold text-base border border-black cursor-pointer relative rounded-lg"
+                >
+                  <div class="flex gap-3 justify-center items-center">
+                    <img
+                      class="w-6 h-6"
+                      src="https://heymale.id/assets/share-0056ccba.svg"
+                      alt="share"
+                    />
+                  </div>
+                </button>
+              </div>
+              <div
+                class="mb-5 flex items-center w-full relative border-b-[1px] border-[#d8d8d848]"
+              >
+                <div class="w-20 h-9 text-center">Details</div>
+                <div
+                  class="border-2 border-black h-[3px] w-20 absolute bottom-0 left-0"
+                ></div>
+              </div>
+              <div class="mb-5 text-[#717171]">
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Voluptatibus inventore impedit omnis exercitationem quos eum
+                  magnam itaque, laborum, aperiam illum voluptas aspernatur
+                  recusandae. Praesentium vero, officia architecto obcaecati
+                  delectus amet?
+                  <br /><br />
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Perferendis quia incidunt temporibus quaerat explicabo,
+                  ratione tenetur voluptates nam natus iste aperiam voluptatum
+                  ea accusantium? Repudiandae voluptas modi molestias? Quod,
+                  laboriosam.
+                  <br /><br />
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                  veniam totam ducimus, nihil aut quasi, ratione hic, officiis
+                  voluptate earum perspiciatis modi temporibus deserunt
+                  quibusdam ad quo vel distinctio dicta. Lorem ipsum dolor sit
+                  amet, consectetur adipisicing elit. Corrupti fugit voluptatum
+                  expedita voluptas ratione eligendi commodi asperiores tempore
+                  magnam, aspernatur exercitationem cumque similique! Vitae,
+                  excepturi magni. Dolorem maxime optio ullam.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ini tempat buat produk rekomendasi -->
+        <!-- tolong diatur ukuran gambar produk -->
+      </div>
+    </div>
+    <footer>
+      <div class="text-center text-white bg-black font-medium">
+        <p>Copyright &copy; 2024 HEYMALE. All rights reserved</p>
+      </div>
+    </footer>
+    <script src="js/productImg.js"></script>
+  </body>
+</html>
