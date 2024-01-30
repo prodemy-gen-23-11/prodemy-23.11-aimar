@@ -21,5 +21,4 @@ function slideShow(n){
     }
     slides[indexSlide-1].style.display= "block";
     dots[indexSlide-1].className += " active";
-    captionText.innerHTML = dots[indexSlide-1].alt;
 }
