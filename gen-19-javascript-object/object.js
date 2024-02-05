@@ -14,7 +14,7 @@ let testObject = {
 
 function inputUpdate (){
     rl.question('property yang ingin diubah: ', (property) => {
-        rl.question('value baru untuk ${property}: ', (value) => {
+        rl.question(`value baru untuk ${property}: `, (value) => {
             testObject[property] = value;
 
             console.log('updated object: ', testObject);
