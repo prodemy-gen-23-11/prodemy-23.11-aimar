@@ -1,18 +1,18 @@
-import React from 'react';
-import ProductCard from './components/productCard';
+import React from "react";
+import ProductCard from "./components/productCard";
 
 function App() {
-  const handleBuyClick = (productName) => {
-    alert(`Anda telah memasukan ${productName} ke dalam Bag`);
-  };
-
   const product = {
     name: "Exmood EDP",
     price: 175000,
-    image: "https://spaces.ilfen.co/assets/image/produk/EB918091-A5A3-4A3E-A0B9-0C46B23116BC.jpeg",
-    sold: "44.000 sold."
+    image:
+      "https://spaces.ilfen.co/assets/image/produk/EB918091-A5A3-4A3E-A0B9-0C46B23116BC.jpeg",
+    sold: "44.000 sold.",
   };
-
+  
+  const handleBuyClick = (productName) => {
+    alert(`Anda telah memasukan ${productName} ke dalam Bag`);
+  };
   return (
     <div className="container flex mx-auto p-8 mt-8 bg-white">
       <ProductCard
@@ -22,8 +22,6 @@ function App() {
         sold={product.sold}
         onBuyClick={handleBuyClick}
       />
-
-      
     </div>
   );
 }
