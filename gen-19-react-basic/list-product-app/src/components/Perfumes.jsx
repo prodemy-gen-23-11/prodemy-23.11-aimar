@@ -1,8 +1,8 @@
 import React from "react";
-import exmood from "../assets/exmood.jpeg"
-import ivry from "../assets/ivry.jpeg"
-import calvary from "../assets/calvary.jpeg"
-import mauritz from "../assets/mauritz.jpeg"
+import exmood from "../assets/exmood.jpeg";
+import ivry from "../assets/ivry.jpeg";
+import calvary from "../assets/calvary.jpeg";
+import mauritz from "../assets/mauritz.jpeg";
 import ProductCard from "./ProductCard";
 
 export default function ListPerfumes() {
