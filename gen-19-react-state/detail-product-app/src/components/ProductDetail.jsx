@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import AddToBagButton from "./AddtoBag";
 
+//masih ada error terkait data yang diambil
 function ProductDetail(props) {
   const { name, price, image, sold } = props;
 
