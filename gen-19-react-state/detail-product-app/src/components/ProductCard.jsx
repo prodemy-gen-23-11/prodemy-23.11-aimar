@@ -4,7 +4,7 @@ import AddToBagButton from "./AddtoBag";
 function ProductCard(props) {
   const { name, price, image, sold } = props;
   return (
-    <div className="bg-gray-100 p-4 rounded-lg shadow-lg ">
+    <div className="bg-gray-100 p-4 rounded-lg shadow-lg cursor-pointer ">
       <img
         src={image[3]}
         alt={name}

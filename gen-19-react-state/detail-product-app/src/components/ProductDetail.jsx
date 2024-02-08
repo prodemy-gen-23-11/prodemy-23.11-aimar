@@ -7,8 +7,8 @@ function ProductDetail(props) {
 
   const [mainImage, setMainImage] = useState(image[0]);
 
-  const handleImageChange = (url) => {
-    setMainImage(url);
+  const handleImageChange = (index) => {
+    setMainImage(index);
   };
 
   return (
@@ -56,11 +56,11 @@ function ProductDetail(props) {
                   {price}
                 </span>
               </p>
-              <p className="text-gray-400 font-medium text-[13px] mb-2">
+              <p className="text-gray-400 font-medium text-[13px]">
                 {sold} sold
               </p>
             </div>
-            <div>
+            <div className="float-left mb-2 mt-1">
               <AddToBagButton />
             </div>
             <div className="mb-5 flex items-center w-full relative border-b-[1px] border-[#d8d8d848]">
