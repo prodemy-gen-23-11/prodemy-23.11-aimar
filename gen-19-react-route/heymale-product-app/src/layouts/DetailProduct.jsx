@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-import AddToBagButton from "./AddtoBag";
+import AddToBagButton from "../components/AddtoBag";
 
-//masih ada error terkait data yang diambil
-function ProductDetail(props) {
-  const { name, price, image, sold } = props;
-
-  const [mainImage, setMainImage] = useState(image[3]);
+function DetailProduct({ parfum }) {
+  const [mainImage, setMainImage] = useState(parfum.image[3]);
 
   const handleImageChange = (image) => {
     setMainImage(image);
   };
-
   return (
     <div
       className="relative h-full mb-8 mt-[72px]"
@@ -31,7 +27,7 @@ function ProductDetail(props) {
               </div>
             </div>
             <div className="flex justify-center items-center gap-4 my-4 rounded-lg">
-              {image.map((image, index) => (
+              {parfum.image.map((image, index) => (
                 <div key={index}>
                   <img
                     className="rounded-lg opacity-80 cursor-pointer"
@@ -45,14 +41,16 @@ function ProductDetail(props) {
           </div>
           <div className="mt-8 md:mt-0">
             <div className="px-3">
-              <p className="text-gray-800 text-2xl font-semibold">{name}</p>
+              <p className="text-gray-800 text-2xl font-semibold">
+                {parfum.name}
+              </p>
               <p>
                 <span className="text-gray-800 font-medium text-lg">
-                  {price}
+                  {parfum.price}
                 </span>
               </p>
               <p className="text-gray-400 font-medium text-[13px]">
-                {sold} sold
+                {parfum.sold} sold
               </p>
             </div>
             <div className="float-left mb-2 mt-1">
@@ -94,5 +92,4 @@ function ProductDetail(props) {
     </div>
   );
 }
-
-export default ProductDetail;
+export default DetailProduct;
