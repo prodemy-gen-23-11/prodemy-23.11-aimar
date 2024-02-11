@@ -8,11 +8,8 @@ function DetailProduct({ parfum }) {
     setMainImage(image);
   };
   return (
-    <div
-      className="relative h-full mb-8 mt-[72px]"
-      style={{ minHeight: "70vh" }}
-    >
-      <div className="w-full h-full bg-gray-200 shadow-lg rounded-md flex flex-col py-4 lg:px-3">
+    <div className="relative h-full my-10" style={{ minHeight: "70vh" }}>
+      <div className="w-full h-full flex flex-col py-4 lg:px-3">
         <div className="grid gap-6 sm:grid-flow-row lg:grid-cols-2 lg:px-3 mx-3">
           <div>
             <div className="flex justify-center">
