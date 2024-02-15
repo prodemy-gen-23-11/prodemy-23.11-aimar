@@ -4,19 +4,19 @@ import AddToBagButton from "../components/AddtoBag";
 function ProductCard({ parfum, onClick }) {
   return (
     <div
-      className="bg-gray-100 p-4 rounded-lg shadow-lg cursor-pointer "
+      className="p-4 bg-gray-100 rounded-lg shadow-lg cursor-pointer "
       onClick={onClick}
     >
       <img
         src={parfum.image[3]}
         alt={parfum.name}
-        className="w-44 h-auto rounded-lg mx-auto"
+        className="h-auto mx-auto rounded-lg w-44"
       />
-      <h3 className="text-xl font-semibold text-gray-800 mt-2">
+      <h3 className="mt-2 text-xl font-semibold text-gray-800">
         {parfum.name}
       </h3>
       <p className="text-gray-800">{parfum.price}</p>
-      <p className="text-gray-400 mb-2">{parfum.sold} sold</p>
+      <p className="mb-2 text-gray-400">{parfum.sold} sold</p>
       <AddToBagButton />
     </div>
   );

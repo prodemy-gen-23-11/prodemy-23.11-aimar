@@ -24,11 +24,11 @@ function DetailProduct(props) {
 
   return (
     <div className="relative h-full my-10" style={{ minHeight: "70vh" }}>
-      <div className="w-full h-full flex flex-col py-4 lg:px-3">
-        <div className="grid gap-6 sm:grid-flow-row lg:grid-cols-2 lg:px-3 mx-3">
+      <div className="flex flex-col w-full h-full py-4 lg:px-3">
+        <div className="grid gap-6 mx-3 sm:grid-flow-row lg:grid-cols-2 lg:px-3">
           <div>
             <div className="flex justify-center">
-              <div className="max-w-sm h-auto relative">
+              <div className="relative h-auto max-w-sm">
                 <div>
                   <img
                     src={mainImage}
@@ -38,11 +38,11 @@ function DetailProduct(props) {
                 </div>
               </div>
             </div>
-            <div className="flex justify-center items-center gap-4 my-4 rounded-lg">
+            <div className="flex items-center justify-center gap-4 my-4 rounded-lg">
               {perfume?.image.map((image, index) => (
                 <div key={index}>
                   <img
-                    className="rounded-lg opacity-80 cursor-pointer"
+                    className="rounded-lg cursor-pointer opacity-80"
                     src={image}
                     alt="small-image"
                     onClick={() => handleImageChange(image)}
@@ -53,11 +53,11 @@ function DetailProduct(props) {
           </div>
           <div className="mt-8 md:mt-0">
             <div className="px-3">
-              <p className="text-gray-800 text-2xl font-semibold">
+              <p className="text-2xl font-semibold text-gray-800">
                 {perfume?.name}
               </p>
               <p>
-                <span className="text-gray-800 font-medium text-lg">
+                <span className="text-lg font-medium text-gray-800">
                   {perfume?.price}
                 </span>
               </p>
@@ -65,11 +65,11 @@ function DetailProduct(props) {
                 {perfume?.sold} sold
               </p>
             </div>
-            <div className="float-left mb-2 mt-1">
+            <div className="float-left mt-1 mb-2">
               <AddToBagButton />
             </div>
             <div className="mb-5 flex items-center w-full relative border-b-[1px] border-[#d8d8d848]">
-              <div className="w-20 h-9 text-center">Details</div>
+              <div className="w-20 text-center h-9">Details</div>
               <div className="border-2 border-gray-800 h-[3px] w-20 absolute bottom-0 left-0"></div>
             </div>
             <div className="mb-5 text-[#717171]">

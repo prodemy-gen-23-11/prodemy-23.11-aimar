@@ -20,7 +20,7 @@ function HomePage() {
     <div>
       <Header />
       <BreadCrumbs />
-      <div className="grid gap-6  m-5 sm: grid-cols-2  lg:grid-cols-6 ">
+      <div className="grid grid-cols-2 gap-6 m-5 sm: lg:grid-cols-6 ">
         {perfume?.map((item) => (
           <ProductCard
             parfum={item}
