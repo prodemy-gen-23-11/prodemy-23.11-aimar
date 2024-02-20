@@ -59,7 +59,7 @@ function Form({
             <textarea
               placeholder="Image Source"
               className="w-full rounded-lg border-[1px] border-gray-200 p-4 pe-12  text-gray-800 text-sm focus:outline-gray-800"
-              {...register("imsge")}
+              {...register("image")}
               id="image"
             />
             <p className="error">{errors.image?.message}</p>
