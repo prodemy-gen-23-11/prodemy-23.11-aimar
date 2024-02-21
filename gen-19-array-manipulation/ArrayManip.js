@@ -9,12 +9,12 @@ let products = [
 
 //fungsi CRUD
 function showProduct() {
-  console.log("\nDaftar Product: ");
+  console.log("\nList of Product: ");
   console.log(products);
 }
 
-function addProduct(id, name, total) {
-  products.push({ id: id, name: name, total: total });
+function addProduct(id, type, total) {
+  products.push({ id: id, type: type, total: total });
   console.log("New products added");
 }
 
@@ -23,10 +23,10 @@ function delProduct(id) {
   console.log("Product deleted");
 }
 
-function editProduct(id, newName, newTotal) {
+function editProduct(id, newType, newTotal) {
   products.forEach((product) => {
     if (product.id === id) {
-      product.name = newName;
+      product.type = newType;
       product.total = newTotal;
     }
   });
@@ -36,7 +36,7 @@ function editProduct(id, newName, newTotal) {
 showProduct();
 
 // addProduct(6, "Hat", 3);
-editProduct(3, "Shoes", 5);
-// delProduct(6);
+// editProduct(3, "Shoes", 5);
+delProduct(5);
 
 showProduct();
