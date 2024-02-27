@@ -4,10 +4,12 @@ import axios from "axios";
 import useSWR from "swr";
 import { CoContext } from "../context/CoContext";
 import { SyncLoader } from "react-spinners";
+import toRupiah from "../util/formatter";
 
 function DetailProduct(props) {
+  const { id } = props;
   const navigate = useNavigate();
-  const { setDataCo } = useContext(CoContext);
+  const { dataCo, setDataCo } = useContext(CoContext);
 
   const [qty, setQty] = useState(1);
   const [mainImage, setMainImage] = useState(null);
@@ -18,8 +20,6 @@ function DetailProduct(props) {
       setQty(qty - 1);
     }
   };
-
-  const { id } = props;
 
   const fetcher = (url) => axios.get(url).then((response) => response.data);
   const { data: perfume, error } = useSWR(
@@ -35,10 +35,16 @@ function DetailProduct(props) {
   if (!perfume) return <SyncLoader color="silver" />;
 
   const addToBag = () => {
-    setDataCo({
-      ...perfume,
-      qty,
-    });
+    const productExist = dataCo.find((item) => item.id === id);
+    if (productExist) {
+      setItems(
+        dataCo.map((item) =>
+          item.id === id ? { ...item, qty: item.qty + qty } : item
+        )
+      );
+    } else {
+      setDataCo([...dataCo, { ...perfume, qty: qty }]);
+    }
     navigate("/payment");
   };
 
@@ -82,7 +88,7 @@ function DetailProduct(props) {
               </p>
               <p>
                 <span className="text-lg font-medium text-gray-800">
-                  {perfume?.price}
+                  {toRupiah(perfume?.price)}
                 </span>
               </p>
               <p className="text-gray-400 font-medium text-[13px]">
