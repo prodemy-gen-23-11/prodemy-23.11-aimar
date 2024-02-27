@@ -16,7 +16,11 @@ function Payment() {
           <hr />
           <div className="flex flex-col">
             <div className="flex justify-between my-4">
-              <img src={dataCo.image[3]} alt={dataCo.name} className="w-16" />
+              <img
+                src={dataCo?.image?.[3]}
+                alt={dataCo.name}
+                className="w-16"
+              />
               <p className="font-semibold">{dataCo.name}</p>
               <span>{dataCo.qty}</span>
               <span>{dataCo.price}</span>
