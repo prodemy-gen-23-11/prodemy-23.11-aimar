@@ -1,4 +1,5 @@
 import React from "react";
+import toRupiah from "../util/formatter";
 
 function ProductCard({ parfum, onClick }) {
   return (
@@ -14,9 +15,9 @@ function ProductCard({ parfum, onClick }) {
       <h3 className="mt-2 text-xl font-semibold text-gray-800">
         {parfum.name}
       </h3>
-      <p className="text-gray-800">Rp.{parfum.price}</p>
+      <p className="text-gray-800">{toRupiah(parfum.price)}</p>
       <p className="mb-2 text-gray-400">{parfum.sold} sold</p>
-      <button className="bg-white text-gray-800 px-6 py-2 rounded-full mx-auto block hover:bg-gray-800 hover:text-white focus:outline-none focus:shadow-outline">
+      <button className="block px-6 py-2 mx-auto text-gray-800 bg-white rounded-full hover:bg-gray-800 hover:text-white focus:outline-none focus:shadow-outline">
         View Product
       </button>
     </div>
