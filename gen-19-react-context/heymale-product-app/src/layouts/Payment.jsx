@@ -7,7 +7,11 @@ function Payment() {
   console.log(dataCo);
 
   return (
-    <div>
+    <div className="px-20">
+      <div>
+        <h1 className="my-6 text-3xl font-semibold">Payment</h1>
+        <p className="m-3 text-2xl text-center">Your Items</p>
+      </div>
       {dataCo.length === 0 ? (
         <p>Bag is empty!</p>
       ) : (
@@ -34,6 +38,11 @@ function Payment() {
           ))}
         </div>
       )}
+      <div className="float-right mt-3 mb-2">
+        <button className="block px-6 py-2 mx-auto text-white bg-gray-700 rounded-sm hover:bg-gray-500 hover:text-white focus:outline-none focus:shadow-outline">
+          Checkout
+        </button>
+      </div>
     </div>
   );
 }
