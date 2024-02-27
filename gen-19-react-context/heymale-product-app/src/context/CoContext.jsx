@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const CoContext = createContext();
 
 export const CoProvider = ({ children }) => {
-  const [dataCo, setDataCo] = useState({});
+  const [dataCo, setDataCo] = useState([]);
 
   const contextVal = {
     dataCo,
