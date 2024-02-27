@@ -30,7 +30,9 @@ function Payment() {
 
           <div className="flex justify-between mt-4">
             <span className="font-bold">Total</span>
-            <span className="font-bold">{dataCo.qty * dataCo.price}</span>
+            <span className="font-bold">
+              {dataCo.qty && dataCo.price ? dataCo.qty * dataCo.price : 0}
+            </span>
           </div>
         </div>
       </div>
