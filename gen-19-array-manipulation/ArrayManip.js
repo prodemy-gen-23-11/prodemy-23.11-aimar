@@ -35,8 +35,8 @@ function editProduct(id, newType, newTotal) {
 
 showProduct();
 
-// addProduct(6, "Hat", 3);
-// editProduct(3, "Shoes", 5);
+//addProduct(6, "Hat", 3);
+//editProduct(3, "Shoes", 5);
 delProduct(5);
 
 showProduct();
