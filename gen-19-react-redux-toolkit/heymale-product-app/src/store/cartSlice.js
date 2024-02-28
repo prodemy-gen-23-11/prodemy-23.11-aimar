@@ -17,8 +17,12 @@ const cartSlice = createSlice({
         state.dataCo.push({ id, name, price, image, qty });
       }
     },
+    delFromCart(state, action) {
+      const itemId = action.payload;
+      state.dataCo = state.dataCo.filter((item) => item.id !== itemId);
+    },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, delFromCart } = cartSlice.actions;
 export default cartSlice.reducer;
