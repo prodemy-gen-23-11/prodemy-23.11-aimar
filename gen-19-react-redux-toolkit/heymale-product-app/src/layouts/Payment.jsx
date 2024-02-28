@@ -45,7 +45,7 @@ function Payment() {
                 <div className="flex items-center justify-between my-4">
                   <img src={item.image[3]} alt={item.name} className="w-16" />
                   <p className="font-semibold">{item.name}</p>
-                  <div>
+                  <div className="flex flex-row">
                     <button
                       className="px-2 py-1 mr-2 text-sm text-gray-600 border border-gray-300 rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
                       onClick={() => handleDecrease(item.id)}
