@@ -35,7 +35,7 @@ function Payment() {
         </div>
       </div>
       {dataCo.length === 0 ? (
-        <p>Bag is empty!</p>
+        <p className="text-center bg-slate-200">Bag is empty!</p>
       ) : (
         <div>
           {dataCo.map((item) => (
