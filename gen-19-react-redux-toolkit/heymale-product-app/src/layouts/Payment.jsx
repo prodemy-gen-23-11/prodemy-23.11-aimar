@@ -66,6 +66,7 @@ function Payment() {
               </div>
             </div>
           ))}
+          <hr />
           <div className="flex justify-end mt-4">
             <span className="mr-3 font-bold">Total:</span>
             <span className="font-bold">{toRupiah(totalPrice())}</span>
