@@ -6,6 +6,14 @@ function Payment() {
   const { dataCo } = useSelector((state) => state.cart);
   console.log(dataCo);
 
+  const totalPrice = () => {
+    let tPrice = 0;
+    dataCo.forEach((item) => {
+      tPrice += item.qty * item.price;
+    });
+    return tPrice;
+  };
+
   return (
     <div className="px-20">
       <div>
@@ -24,18 +32,15 @@ function Payment() {
                   <img src={item.image[3]} alt={item.name} className="w-16" />
                   <p className="font-semibold">{item.name}</p>
                   <span>{item.qty}</span>
-                  <span>{toRupiah(item.price)}</span>
+                  <span>{toRupiah(item.qty * item.price)}</span>
                 </div>
-              </div>
-              <hr />
-              <div className="flex justify-between mt-4">
-                <span className="font-bold">Total</span>
-                <span className="font-bold">
-                  {toRupiah(item.qty * item.price)}
-                </span>
               </div>
             </div>
           ))}
+          <div className="flex justify-between mt-4">
+            <span className="font-bold">Total</span>
+            <span className="font-bold">{toRupiah(totalPrice())}</span>
+          </div>
         </div>
       )}
       <div className="float-right mt-3 mb-2">
