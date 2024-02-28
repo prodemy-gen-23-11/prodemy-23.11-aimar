@@ -1,6 +1,7 @@
 import React from "react";
 import toRupiah from "../util/formatter";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function Payment() {
   const { dataCo } = useSelector((state) => state.cart);
@@ -18,7 +19,9 @@ function Payment() {
     <div className="px-20">
       <div>
         <h1 className="my-6 text-3xl font-semibold">Payment</h1>
-        <p className="m-3 text-2xl text-center">Your Items</p>
+        <div className="flex justify-items-center place-content-center">
+          <p className="m-3 text-2xl">Your Items</p>
+        </div>
       </div>
       {dataCo.length === 0 ? (
         <p>Bag is empty!</p>
@@ -37,12 +40,21 @@ function Payment() {
               </div>
             </div>
           ))}
-          <div className="flex justify-between mt-4">
-            <span className="font-bold">Total</span>
+          <div className="flex justify-end mt-4">
+            <span className="mr-3 font-bold">Total:</span>
             <span className="font-bold">{toRupiah(totalPrice())}</span>
           </div>
         </div>
       )}
+      <div className="float-left mt-3 mb-2">
+        <p>
+          <Link to="/">
+            <button className="block px-6 py-2 text-white bg-gray-700 rounded-sm hover:bg-gray-500 hover:text-white focus:outline-none focus:shadow-outline">
+              Continue Shopping
+            </button>
+          </Link>
+        </p>
+      </div>
       <div className="float-right mt-3 mb-2">
         <button className="block px-6 py-2 mx-auto text-white bg-gray-700 rounded-sm hover:bg-gray-500 hover:text-white focus:outline-none focus:shadow-outline">
           Checkout
