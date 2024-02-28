@@ -1,11 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+function Navbar() {
+  const { totalItems } = useSelector((state) => state.cart);
   return (
-    <div className="transition duration-100 ease-in-out flex justify-between h-16 px-3 items-center text-black bg-white">
-      <div className="flex gap-16 items-center">
-        <div className="flex gap-4 items-center">
+    <div className="flex items-center justify-between h-16 px-3 text-black transition duration-100 ease-in-out bg-white">
+      <div className="flex items-center gap-16">
+        <div className="flex items-center gap-4">
           <img
             src="https://heymale.id/assets/burger-black-75ca1788.svg"
             alt="sidemenu"
@@ -35,7 +37,7 @@ const Navbar = () => {
               <div className="flex gap-2 text-[13px] uppercase cursor-pointer">
                 <span>COLLECTION</span>
                 <img
-                  className="mt-1 h-3 w-3 rotate-0"
+                  className="w-3 h-3 mt-1 rotate-0"
                   src="https://heymale.id/assets/chevron-down-79b13f5e.svg"
                   alt="open"
                 />
@@ -63,13 +65,22 @@ const Navbar = () => {
           src="https://heymale.id/assets/person-black-322902d6.svg"
           alt="profile"
         />
-        <img
-          className="w-6 h-6 cursor-pointer"
-          src="https://heymale.id/assets/bag-black-ba36e404.svg"
-          alt="bag"
-        />
+        <Link to="/payment">
+          <div className="relative">
+            <img
+              className="cursor-pointer w-7 h-7"
+              src="https://heymale.id/assets/bag-black-ba36e404.svg"
+              alt="bag"
+            />
+            {totalItems > 0 && (
+              <span className="absolute top-0 right-0 flex items-center justify-center w-4 h-4 text-xs text-white bg-red-500 rounded-full">
+                {totalItems}
+              </span>
+            )}
+          </div>
+        </Link>
       </div>
     </div>
   );
-};
+}
 export default Navbar;

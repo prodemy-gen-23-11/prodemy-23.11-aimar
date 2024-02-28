@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   dataCo: [],
+  totalItems: 0,
 };
 
 const cartSlice = createSlice({
@@ -16,16 +17,22 @@ const cartSlice = createSlice({
       } else {
         state.dataCo.push({ id, name, price, image, qty });
       }
+      state.totalItems += qty;
     },
     delFromCart(state, action) {
       const itemId = action.payload;
-      state.dataCo = state.dataCo.filter((item) => item.id !== itemId);
+      const item = state.dataCo.find((item) => item.id === itemId);
+      if (item) {
+        state.totalItems -= item.qty;
+        state.dataCo = state.dataCo.filter((item) => item.id !== itemId);
+      }
     },
     increaseQty(state, action) {
       const itemId = action.payload;
       const item = state.dataCo.find((item) => item.id === itemId);
       if (item) {
         item.qty += 1;
+        state.totalItems += 1;
       }
     },
     decreaseQty(state, action) {
@@ -33,6 +40,7 @@ const cartSlice = createSlice({
       const item = state.dataCo.find((item) => item.id === itemId);
       if (item && item.qty > 1) {
         item.qty -= 1;
+        state.totalItems -= 1;
       }
     },
   },
