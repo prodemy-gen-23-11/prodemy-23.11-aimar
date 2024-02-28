@@ -1,12 +1,17 @@
 import React from "react";
 import toRupiah from "../util/formatter";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { delFromCart } from "../store/cartSlice";
 
 function Payment() {
   const { dataCo } = useSelector((state) => state.cart);
   console.log(dataCo);
 
+  const dispatch = useDispatch();
+  const handleRemove = (itemId) => {
+    dispatch(delFromCart(itemId));
+  };
   const totalPrice = () => {
     let tPrice = 0;
     dataCo.forEach((item) => {
@@ -31,10 +36,31 @@ function Payment() {
             <div key={item.id}>
               <hr />
               <div className="flex flex-col">
-                <div className="flex justify-between my-4">
+                <div className="flex items-center justify-between my-4">
                   <img src={item.image[3]} alt={item.name} className="w-16" />
                   <p className="font-semibold">{item.name}</p>
                   <span>{item.qty}</span>
+                  <button
+                    className="p-2 text-white bg-red-700 rounded-full hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-600"
+                    onClick={() => handleRemove(item.id)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="inline-block w-5 h-5 mr-1 align-middle"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="15" y1="9" x2="9" y2="15" />
+                      <line x1="9" y1="9" x2="15" y2="15" />
+                    </svg>
+                    Delete
+                  </button>
+
                   <span>{toRupiah(item.qty * item.price)}</span>
                 </div>
               </div>
