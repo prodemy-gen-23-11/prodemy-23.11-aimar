@@ -2,13 +2,19 @@ import React from "react";
 import toRupiah from "../util/formatter";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { delFromCart } from "../store/cartSlice";
+import { decreaseQty, delFromCart, increaseQty } from "../store/cartSlice";
 
 function Payment() {
   const { dataCo } = useSelector((state) => state.cart);
   console.log(dataCo);
-
   const dispatch = useDispatch();
+
+  const handleIncrease = (itemId) => {
+    dispatch(increaseQty(itemId));
+  };
+  const handleDecrease = (itemId) => {
+    dispatch(decreaseQty(itemId));
+  };
   const handleRemove = (itemId) => {
     dispatch(delFromCart(itemId));
   };
@@ -39,7 +45,21 @@ function Payment() {
                 <div className="flex items-center justify-between my-4">
                   <img src={item.image[3]} alt={item.name} className="w-16" />
                   <p className="font-semibold">{item.name}</p>
-                  <span>{item.qty}</span>
+                  <div>
+                    <button
+                      className="px-2 py-1 mr-2 text-sm text-gray-600 border border-gray-300 rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
+                      onClick={() => handleDecrease(item.id)}
+                    >
+                      -
+                    </button>
+                    <span>{item.qty}</span>
+                    <button
+                      className="px-2 py-1 ml-2 text-sm text-gray-600 border border-gray-300 rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
+                      onClick={() => handleIncrease(item.id)}
+                    >
+                      +
+                    </button>
+                  </div>
                   <button
                     className="p-2 text-white bg-red-700 rounded-full hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-600"
                     onClick={() => handleRemove(item.id)}
