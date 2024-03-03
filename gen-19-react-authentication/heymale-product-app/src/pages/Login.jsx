@@ -12,11 +12,8 @@ function Login() {
   const dispatch = useDispatch();
 
   const schema = yup.object().shape({
-    email: yup
-      .string()
-      .email("Email tidak valid")
-      .required("Email harus diisi"),
-    password: yup.string().required("Password harus diisi"),
+    email: yup.string().email("Email not valid").required("Email is required"),
+    password: yup.string().required("Password is required"),
   });
   const {
     register,
